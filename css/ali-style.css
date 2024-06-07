@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat);
+/* EXPLICIT FONTS */
+
+body#page-body .root-menu>.page_item>a,body#page-body #menu .menu>.menu-item>a,body#page-body .root-menu>.menu>.page_item>a,body#page-body #mobile_menu .menu-panel .root-menu .menu>.menu-item>a,body#page-body #sticky-panel #sp-menu .menu>.menu-item>a{font-family:Montserrat;text-transform:uppercase}
+body#page-body p,body#page-body b,body#page-body td,body#page-body li,body#page-body label,body#page-body input{font-family:Montserrat}
+body#page-body em{font-family:Montserrat}
+body#page-body strong{font-family:Montserrat}
+body#page-body .button{font-family:Montserrat}
+body#page-body .heading.h1 span:not(.pretext):not(.posttext){font-family:Montserrat}
+body#page-body .heading.h2 span:not(.pretext):not(.posttext){font-family:Montserrat}
+body#page-body .heading.h3 span:not(.pretext):not(.posttext){font-family:Montserrat}
+body#page-body .heading.h4 span:not(.pretext):not(.posttext){font-family:Montserrat}
+body#page-body .heading.h5 span:not(.pretext):not(.posttext){font-family:Montserrat}
+body#page-body .heading span.pretext,body#page-body .heading span.posttext{font-family:Montserrat}
+body#page-body {background-color:#ffffff}
+#edge-panel-body{background-image:url("https://dominickgiguere.com/files/2021/10/banniere_background-e1633094197347.jpg");background-size:cover;background-repeat:no-repeat;}#edge-panel-body{background-color:rgba(0,0,0,1);color:#000000;}#edge-panel-body p, #edge-panel-body strong, #edge-panel-body span,#edge-panel-body a,#edge-panel-body i{color:#000000;}
+{display:none}
+.aliquando-form .form-item-list .form-item textarea {
+   
+    color: black;
+}
+
+body#page-body .bio .button {
+   display:none;
+}

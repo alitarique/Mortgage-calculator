@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/global.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/ali-style.css">
+    <link rel="stylesheet" href="css/style(1).min.css">
+    <script src="js/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    
+    <section class="page-content layout-container bg_default">
+        <div class="layout-content">
+            <div class="layout-row xs-layout-column print-layout-row layout-align-start-stretch">
+                <div class="flex-30 xs-flex-100 print-flex-30 parameters">
+                          
+                    <div class="heading h2 "><span>Montant</span><div class="post-heading"></div></div>                <section id="choice-context">
+                        <div>
+                            <div class="block">
+                                <label>À partir du coût de la propriété</label>
+                                <input id="targeted_cost" type="number" value="200000"><span class="unit">$</span>
+                            </div>
+                            <button id="btnProcessPayment" class="button">Calculez le paiement<i class="fa fa-angle-right hidden" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="heading h1 "><span>OU</span><div class="post-heading"></div></div>                    <div class="noprint">
+                            <div class="block">
+                                <label>À partir de votre budget</label>
+                                <input id="targeted_payments" type="number" value="500"><span class="unit">$</span>
+                            </div>
+                            <button id="btnOwnershipCost" class="button">Calculez le coût de la propriété<i class="fa fa-angle-right hidden" aria-hidden="true"></i></button>
+                        </div>
+                    </section>
+    
+                    <div class="heading h3 "><span>Autres paramètres de calcul</span><div class="post-heading"></div></div>                <section id="hypo-context">
+                        <div class="block">
+                            <label>Paiement</label>
+                            <select id="payment-cycle" style="width:calc(100% - 20px);">
+                                <option value="1">Annuel</option>
+                                <option value="2">Semi annuel</option>
+                                <option value="12" selected="">Mensuel</option>
+                                <option value="26">Aux 2 semaines</option>
+                                <option value="52">À la semaine</option>
+                                <option value="26a">Accé. aux 2 semaines</option>
+                                <option value="52a">Accé. à la semaine</option>
+                            </select>
+                            
+                            <label>Taux d'intérêt</label>
+                            <input id="interest" type="number" min="0.1" max="10" step="0.01" value="3"><span class="unit">%</span>
+    
+                            <label>Mise de fonds</label>
+                            <input id="capital_outlay" value="20000" style="width:calc(100% - 20px);"><span class="unit">$</span>
+                            
+                        </div>
+                        <div class="block">
+                            <label>Période d'amortissement</label>
+                            <select id="amortization">
+                                <option value="5">5 ans</option><option value="6">6 ans</option><option value="7">7 ans</option><option value="8">8 ans</option><option value="9">9 ans</option><option value="10">10 ans</option><option value="11">11 ans</option><option value="12">12 ans</option><option value="13">13 ans</option><option value="14">14 ans</option><option value="15">15 ans</option><option value="16">16 ans</option><option value="17">17 ans</option><option value="18">18 ans</option><option value="19">19 ans</option><option value="20">20 ans</option><option value="21">21 ans</option><option value="22">22 ans</option><option value="23">23 ans</option><option value="24">24 ans</option><option value="25" selected="">25 ans</option><option value="26">26 ans</option><option value="27">27 ans</option><option value="28">28 ans</option><option value="29">29 ans</option><option value="30">30 ans</option><option value="31">31 ans</option><option value="32">32 ans</option><option value="33">33 ans</option><option value="34">34 ans</option><option value="35">35 ans</option><option value="36">36 ans</option><option value="37">37 ans</option><option value="38">38 ans</option><option value="39">39 ans</option><option value="40">40 ans</option>                        </select>
+    
+                            <label>Terme</label>
+                            <select id="term">
+                                <option value="1">1 ans</option><option value="2">2 ans</option><option value="3" selected="">3 ans</option><option value="4">4 ans</option><option value="5">5 ans</option><option value="6">6 ans</option><option value="7">7 ans</option>                        </select>
+                        </div>
+                    </section>  
+    
+                </div>
+    
+                <div class="result-section flex-70 xs-flex-100 print-flex-70">
+    
+                    <div class="text">
+                                                <p>Cette calculatrice a été mise à votre disposition pour vous permettre de calculer le montant de vos versements hypothécaires.</p>
+                            <p>Pour démarrer le processus de calcul, veuillez remplir le champ "Coût de la propriété" ci-contre.</p>
+                            
+                                        </div>
+    
+                    <div id="result" data-format="{0}$" class="layout-row layout-align-center-center md-layout-column xs-layout-column print-layout-column print-layout-align-start-center">
+                        <div class="flex-50 md-flex-100 xs-flex-100 print-flex-100 layout-column layout-align-center-center">
+                            <div id="result-periodic-payments" class="item layout-column layout-align-center-center">
+                                <div class="value"> 878.25$</div>
+                                <label data-cost-label="Coût maximal de la propriété" data-payment-label="Paiement périodique">Paiement périodique</label>
+                            </div>
+                        </div>
+                        <ul class="no-style layout-row layout-align-center-center flex-50  xs-flex-100 print-flex-75 layout-wrap">
+                            <li id="result-downpayment" data-format="{0}%" class="item">
+                                <div class="value">10%</div>
+                                <label>Mise de fonds</label>
+                            </li>     
+    
+    
+                            <li id="result-total-interest" class="item">
+                                <div class="value">77 894$</div>
+                                <label>Total intérêts</label>
+                            </li>
+    
+                            <li id="result-insurance" class="item">
+                                <div class="value">5 580$</div>
+                                <label>Assurance</label>
+                            </li>   
+                            
+                            <li id="result-depreciation" class="item" data-format="{0} ans">
+                                <div class="value">25 ans</div>
+                                <label>Amortissement</label>
+                            </li>  
+    
+                        </ul>
+                    </div>
+    
+                    <div class="note">
+                                        
+                            <p>Veuillez prendre note que l'information fournie par ce calculateur hypothécaire n'est pas destinée à servir pour des conseils légaux, comptables ou fiscaux, et ne devrait pas être utilisée à ces fins.</p>
+                            <p style="display:none">De plus, pour les acheteurs dont la mise de fonds est moindre que 20 %, veuillez noter que le calcul qui précède ne tient pas compte de la prime d’assurance prêt hypothécaire.</p>
+                                        </div>
+                </div>
+            </div>           
+        </div>
+    </section>
+    <!-- </div> /#main-content -->
+    <!-- scripts -->
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/calculator.js"></script>
+    <script type="text/javascript" name="page-script">        jQuery(document).ready(function(){
+        model.load('');
+    })</script>
+</body>
+</html>
